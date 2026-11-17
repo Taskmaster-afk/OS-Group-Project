@@ -55,7 +55,7 @@ Mount:
 
 ```bash
 mkdir -p /tmp/mnt
-python3 xv6fuse.py fs.img /tmp/mnt -f
+python3 Project_1/xv6fuse.py fs.img /tmp/mnt -f
 ```
 
 Unmount:
@@ -67,7 +67,7 @@ fusermount3 -u /tmp/mnt
 Run the checker:
 
 ```bash
-python3 fsck.py fs.img
+python3 Project_1/fsck.py fs.img
 ```
 
 **Always unmount before booting xv6 on the same `fs.img`.** Running both at once corrupts the image. Keep a backup copy of a clean `fs.img`.
@@ -104,17 +104,20 @@ Run with `make qemu CPUS=1` for deterministic scheduling when testing.
 
 ```
 .
-├── xv6defs.py          constants and on-disk structs (from kernel/fs.h)
-├── xv6img.py           image access: block IO, inodes, bmap, readi, path lookup
-├── alloc.py            bitmap/inode allocation, writei, truncate
-├── dirops.py           dirlink, create, mkdir, unlink
-├── xv6fuse.py          FUSE wrapper (getattr, readdir, read, write, ...)
-├── fsck.py             consistency checker
-├── tests/              Linux <-> xv6 test scripts
-├── mlfq/               MLFQ patch, pstat.h, user test programs
-├── requirements.txt    pinned Python dependencies
-├── README.md
-└── CONTRIBUTING.md
+├── Project_1/
+│   ├── xv6defs.py               constants and on-disk structs (from kernel/fs.h)
+│   ├── xv6img.py                image access: block IO, inodes, bmap, readi, path lookup
+│   ├── alloc.py                 bitmap/inode allocation, writei, truncate
+│   ├── dirops.py                dirlink, create, mkdir, unlink
+│   ├── xv6fuse.py               FUSE wrapper (getattr, readdir, read, write, ...)
+│   ├── fsck.py                  consistency checker
+│   ├── NAMESPACE_OPERATIONS.md  namespace operations design & walkthrough
+│   ├── tests/                   Linux <-> xv6 test scripts and unit tests
+│   ├── requirements.txt         pinned Python dependencies
+│   └── CONTRIBUTING.md
+├── Project_2/                   MLFQ scheduler project
+├── docs/                        reading list and project docs
+└── README.md
 ```
 
 ## Known limitations
